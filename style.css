@@ -89,8 +89,8 @@ h1, h2, h3 {
 }
 
 h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; margin-top: 1.5em; color: var(--teal); } /* Different accent for section titles */
-h3 { font-size: 1.4rem; color: var(--peach); } /* Project titles */
+h2 { font-size: 2rem; margin-top: 1.5em; color: var(--mauve); } /* Different accent for section titles */
+h3 { font-size: 1.4rem; color: var(--blue); } /* Project titles */
 
 p {
     margin-bottom: 1em;
@@ -127,12 +127,12 @@ header nav ul {
 }
 
 header nav a {
-    color: var(--sky);
+    color: var(--mauve);
     font-weight: bold;
     text-decoration: none;
 }
 header nav a:hover {
-    color: var(--sapphire);
+    color: var(--mauve);
 }
 
 /* --- Hero Section --- */
@@ -142,7 +142,7 @@ header nav a:hover {
 }
 
 #hero h2 {
-    color: var(--green);
+    color: var(--mauve);
     font-size: 2.8rem;
     margin-top: 0;
 }
@@ -238,13 +238,13 @@ section {
 
 .project-links a {
     margin-right: 15px;
-    color: var(--green);
+    color: var(--mauve);
     font-weight: bold;
     font-size: 0.9rem;
 }
 
 .project-links a:hover {
-    color: var(--teal);
+    color: var(--mauve);
 }
 
 
@@ -265,10 +265,10 @@ section {
 
 .contact-links li a {
     font-size: 1.1rem;
-    color: var(--yellow);
+    color: var(--blue);
 }
 .contact-links li a:hover {
-    color: var(--peach);
+    color: var(--blue);
 }
 
 /* --- Footer --- */
@@ -318,4 +318,3 @@ footer .heart {
         gap: 15px;
     }
 }
-
