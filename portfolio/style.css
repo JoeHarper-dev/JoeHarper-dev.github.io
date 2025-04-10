@@ -55,12 +55,11 @@
     --latte-surface2: #acb0be;
     --latte-surface1: #bcc0cc;
     --latte-surface0: #ccd0da;
-    --latte-base: #eff1f5; /* Main Background */
-    --latte-mantle: #e6e9ef; /* Slightly darker bg */
-    --latte-crust: #dce0e8; /* Even darker bg / borders */
+    --latte-base: #eff1f5;
+    --latte-mantle: #e6e9ef;
+    --latte-crust: #dce0e8;
 }
 
-/* --- Theme Variable Mapping --- */
 body {
     /* Default to Mocha */
     --bg-color: var(--mocha-base);
@@ -96,7 +95,6 @@ body.theme-latte {
     --icon-color: var(--latte-yellow);
 }
 
-/* --- Base Styles --- */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -109,7 +107,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden; 
 }
 
 .container {
@@ -157,7 +155,7 @@ header {
     padding: 30px 0;
     text-align: center;
     border-bottom: 3px solid var(--accent-color);
-    position: relative; /* For theme toggle positioning */
+    position: relative; 
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -168,9 +166,9 @@ header {
 h1.name-pop {
     font-size: 2.8em;
     margin-bottom: 0.2em;
-    display: inline-block; /* Needed for transform */
+    display: inline-block;
     animation: pop-in 0.6s ease-out forwards, subtle-bounce 2s infinite ease-in-out 1s;
-    color: var(--text-color); /* Override default h1 color */
+    color: var(--text-color); 
 }
 
 .subtitle {
@@ -181,10 +179,10 @@ h1.name-pop {
 
 /* --- Theme Toggle Button --- */
 #theme-toggle {
-    position: fixed; /* Changed from absolute */
-    top: 15px;       /* Distance from top */
-    right: 20px;      /* Distance from right */
-    z-index: 1000;   /* Ensure it's above other elements */
+    position: fixed; 
+    top: 15px;       
+    right: 20px;      
+    z-index: 1000;   
     background-color: var(--button-bg);
     color: var(--button-text);
     border: 1px solid var(--card-border);
@@ -214,29 +212,29 @@ h1.name-pop {
 
 .project-carousel-wrapper {
     position: relative;
-    overflow: hidden; /* Crucial for carousel effect */
+    overflow: hidden; 
     width: 100%;
-    max-width: 700px; /* Adjust as needed */
+    max-width: 700px; 
     margin: 0 auto;
     border-radius: 10px;
 }
 
 .project-carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Animation for sliding */
-    width: fit-content; /* Allow flex items to determine width */
+    transition: transform 0.5s ease-in-out; 
+    width: fit-content; 
 }
 
 .project-card {
-    flex: 0 0 100%; /* Each card takes full width of the wrapper */
+    flex: 0 0 100%; 
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 10px;
     padding: 30px;
-    margin: 0; /* Remove margin if flex handles spacing */
+    margin: 0; 
     text-align: center;
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-    min-height: 250px; /* Ensure consistent height */
+    min-height: 250px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -264,7 +262,7 @@ h1.name-pop {
     display: inline-block;
     margin-top: 15px;
     background-color: var(--accent-color);
-    color: var(--bg-color); /* High contrast text */
+    color: var(--bg-color); 
     padding: 8px 18px;
     border-radius: 20px;
     font-weight: 700;
@@ -282,7 +280,7 @@ h1.name-pop {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent */
+    background-color: rgba(0, 0, 0, 0.3); 
     color: white;
     border: none;
     font-size: 2em;
@@ -291,7 +289,7 @@ h1.name-pop {
     cursor: pointer;
     z-index: 10;
     transition: background-color 0.3s ease;
-    line-height: 1; /* Adjust line height for better vertical centering */
+    line-height: 1; 
     width: 40px;
     height: 40px;
     display: flex;
@@ -322,7 +320,7 @@ h1.name-pop {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between links */
+    gap: 20px; 
 }
 
 .contact-links a {
@@ -397,7 +395,7 @@ footer {
         padding: 3px 10px;
     }
     .header-content {
-        padding-bottom: 10px; /* Add space if button moves */
+        padding-bottom: 10px; 
     }
 
 
@@ -416,6 +414,6 @@ footer {
         gap: 10px;
     }
     .project-card {
-        min-height: 280px; /* May need more height on small screens */
+        min-height: 280px; 
     }
 }
