@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Harper.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-mocha"> 
+
+    <header>
+        <div class="container header-content">
+            <h1 class="name-pop">👋 Hey! I'm Joe Harper</h1>
+            <p class="subtitle">VFX Programmer and 3D artist.</p>
+            <button id="theme-toggle" aria-label="Switch Theme">Switch to Latte</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>A Little Bit About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-carousel-wrapper">
+                <div class="project-carousel">
+                    
+                    <div class="project-card">
+                        <div class="project-icon"></></div>
+                        <h3>Houdini CityBuilder</h3>
+                        <p>A tool for SideFX Houdini that creates a template city.</p>
+                        <a href="https://github.com/kuisux/VFX-6102-citybuilder" class="project-link">View Github</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">🖥️</div>
+                        <h3>Scatter Script</h3>
+                        <p>A script for SideFX Houdini that scatters a selected object.</p>
+                        <a href="https://github.com/kuisux/VFX6100" class="project-link">View Github</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">🎥</div>
+                        <h3>3D Cave</h3>
+                        <p>A 3D cave created in Maya Houdini and NukeX.</p>
+                        <a href="#" class="project-link">View Video</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">🏎️</div>
+                        <h3>Subaru Impreza</h3>
+                        <p>A digitally imposed Subaru Impreza using Maya and NukeX.</p>
+                        <a href="https://vimeo.com/1074278920/a6f78b58f6?share=copy" class="project-link">View Video</a>
+                    </div>
+
+                </div>
+                <button id="prev-project" class="carousel-btn prev" aria-label="Previous Project">‹</button>
+                <button id="next-project" class="carousel-btn next" aria-label="Next Project">›</button>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Interested in collaborating or just want to chat?</p>
+            <ul class="contact-links">
+                <li><a href="mailto:jharps99@gmail.com">Email Me</a></li>
+                <li><a href="https://github.com/kuisux" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Joe Harper. Made with <a href="https://github.com/catppuccin">Catppuccin</a> colours!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
