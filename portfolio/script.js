@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize carousel position
     showProject(currentIndex);
 
-    // Optional: Add keyboard navigation for carousel
     document.addEventListener('keydown', (e) => {
         // Check if focus is within the carousel area or its buttons to avoid global capture
         if (document.activeElement === prevButton || document.activeElement === nextButton || carousel.contains(document.activeElement)) {
@@ -74,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-     // Optional: Add swipe support for touch devices (basic implementation)
+
     let touchStartX = 0;
     let touchEndX = 0;
     const carouselWrapper = document.querySelector('.project-carousel-wrapper');
@@ -97,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Swiped right (previous project)
             prevButton.click();
         }
-        // Reset values (optional, good practice)
+        // Reset values
         touchStartX = 0;
         touchEndX = 0;
     }
