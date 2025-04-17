@@ -1,253 +1,250 @@
-/* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #e50914; /* Bright Red */
-    --dark-color: #141414;    /* Very Dark Grey/Off-black */
-    --light-color: #f5f5f5;   /* Light Grey/Off-white */
-    --card-bg: #222;         /* Dark background for cards */
-    --hover-glow: rgba(229, 9, 20, 0.5); /* Red glow for hover */
+	--primary-color: #e50914;
+	/* Bright Red */
+	--dark-color: #141414;
+	/* Very Dark Grey/Off-black */
+	--light-color: #f5f5f5;
+	/* Light Grey/Off-white */
+	--card-bg: #222;
+	/* Dark background for cards */
+	--hover-glow: rgba(229, 9, 20, 0.5);
+	/* Red glow for hover */
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+	font-family: 'Poppins', sans-serif;
+	background-color: var(--dark-color);
+	color: var(--light-color);
+	line-height: 1.6;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	overflow-x: hidden;
 }
 
-/* --- Header Styles --- */
 header {
-    text-align: center;
-    padding: 40px 20px 20px;
-    animation: fadeInDown 0.8s ease-out;
+	text-align: center;
+	padding: 40px 20px 20px;
+	animation: fadeInDown 0.8s ease-out;
 }
 
 #logo {
-    display: block;
-    margin: 0 auto 15px auto;
-    max-width: 150px; /* Adjust as needed */
-    height: auto;
+	display: block;
+	margin: 0 auto 15px auto;
+	max-width: 150px;
+	height: auto;
 }
 
 h1 {
-    color: var(--primary-color);
-    font-size: 2.8em;
-    margin-bottom: 5px;
-    font-weight: 700;
-    letter-spacing: 1px;
+	color: var(--primary-color);
+	font-size: 2.8em;
+	margin-bottom: 5px;
+	font-weight: 700;
+	letter-spacing: 1px;
 }
 
 .tagline {
-    font-size: 1.2em;
-    color: var(--light-color);
-    opacity: 0.8;
-    font-weight: 300;
+	font-size: 1.2em;
+	color: var(--light-color);
+	opacity: 0.8;
+	font-weight: 300;
 }
 
-/* --- Main Content & Cards --- */
+
 main {
-    flex-grow: 1; /* Allows footer to stick to bottom */
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
+	flex-grow: 1;
+	width: 90%;
+	max-width: 1200px;
+	margin: 20px auto;
+	padding: 0 15px;
 }
 
 main h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2em;
-    color: var(--light-color);
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 10px;
+	text-align: center;
+	margin-bottom: 40px;
+	font-size: 2em;
+	color: var(--light-color);
+	font-weight: 600;
+	position: relative;
+	padding-bottom: 10px;
 }
 
-/* Underline effect for section title */
 main h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 3px;
+	background-color: var(--primary-color);
+	border-radius: 2px;
 }
 
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 30px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 30px;
 }
 
 .card {
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    overflow: hidden; /* Keep image corners rounded */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    opacity: 0; /* Initially hidden for JS animation */
-    transform: translateY(20px); /* Start slightly lower */
+	background-color: var(--card-bg);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	opacity: 0;
+	transform: translateY(20px);
 }
 
-/* Make the entire card clickable via the anchor */
 .card a {
-    text-decoration: none;
-    color: inherit; /* Inherit text color from body/card */
-    display: block; /* Make link fill the card */
-    height: 100%; /* Ensure link covers the whole card */
+	text-decoration: none;
+	color: inherit;
+	display: block;
+	height: 100%;
 }
 
 .card img {
-    width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Crop image nicely */
-    display: block;
-    border-bottom: 3px solid var(--primary-color); /* Red accent */
-    transition: transform 0.3s ease-in-out;
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+	border-bottom: 3px solid var(--primary-color);
+	transition: transform 0.3s ease-in-out;
 }
 
 .card-content {
-    padding: 20px;
+	padding: 20px;
 }
 
 .card h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    font-size: 1.4em;
-    font-weight: 600;
+	color: var(--primary-color);
+	margin-bottom: 10px;
+	font-size: 1.4em;
+	font-weight: 600;
 }
 
 .card p {
-    font-size: 0.95em;
-    color: var(--light-color);
-    opacity: 0.9;
+	font-size: 0.95em;
+	color: var(--light-color);
+	opacity: 0.9;
 }
 
-/* --- Card Hover & Click Effects --- */
 .card:hover {
-    transform: translateY(-8px) scale(1.03); /* Lift and slightly enlarge */
-    box-shadow: 0 10px 25px var(--hover-glow); /* Red glow effect */
+	transform: translateY(-8px) scale(1.03);
+	box-shadow: 0 10px 25px var(--hover-glow);
 }
 
 .card:hover img {
-     transform: scale(1.05); /* Slightly zoom image on hover */
+	transform: scale(1.05);
 }
 
-/* Active state for click feedback (optional) */
 .card:active {
-    transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 5px 15px var(--hover-glow);
+	transform: translateY(-2px) scale(1.01);
+	box-shadow: 0 5px 15px var(--hover-glow);
 }
 
 
-/* --- Footer --- */
 footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px; /* Space above footer */
-    color: #aaa;
-    font-size: 0.9em;
-    background-color: #111; /* Slightly different dark shade */
+	text-align: center;
+	padding: 25px;
+	margin-top: 40px;
+	color: #aaa;
+	font-size: 0.9em;
+	background-color: #111;
 }
 
-/* --- Simple Animations --- */
 
-/* For header */
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
-/* Class added by JS for card entrance */
 .card-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 
-/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.2em;
-    }
-    main h2 {
-        font-size: 1.8em;
-    }
-    .card-container {
-        grid-template-columns: 1fr; /* Stack cards on smaller screens */
-        gap: 25px;
-    }
+	h1 {
+		font-size: 2.2em;
+	}
+
+	main h2 {
+		font-size: 1.8em;
+	}
+
+	.card-container {
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
 }
 
-/* --- Firefly Background Animation --- */
 
 #firefly-container {
-    position: fixed; /* Keep it fixed regardless of scroll */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Place it behind all other content */
-    overflow: hidden; /* Hide fireflies that go off-screen */
-    pointer-events: none; /* Make it unclickable */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	overflow: hidden;
+	pointer-events: none;
 }
 
 .firefly {
-    position: absolute;
-    width: 4px; /* Size of the firefly */
-    height: 4px;
-    background-color: var(--primary-color); /* Use the red color */
-    border-radius: 50%;
-    box-shadow: 0 0 6px 2px var(--primary-color); /* Glow effect */
-    opacity: 0; /* Start invisible */
-    animation: fly 5s linear infinite; /* Base animation */
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	background-color: var(--primary-color);
+	border-radius: 50%;
+	box-shadow: 0 0 6px 2px var(--primary-color);
+	opacity: 0;
+	animation: fly 5s linear infinite;
 }
 
-/* Keyframes for the floating/fading animation */
 @keyframes fly {
-    0% {
-        opacity: 0;
-        transform: translateY(0) scale(0.8);
-    }
-    25% {
-        opacity: 0.8; /* Fade in */
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(-10px) scale(1); /* Gentle upward drift */
-    }
-    75% {
-        opacity: 0.8; /* Fade out */
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(10px) scale(0.8); /* Drift down slightly */
-    }
+	0% {
+		opacity: 0;
+		transform: translateY(0) scale(0.8);
+	}
+
+	25% {
+		opacity: 0.8;
+	}
+
+	50% {
+		opacity: 1;
+		transform: translateY(-10px) scale(1);
+	}
+
+	75% {
+		opacity: 0.8;
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(10px) scale(0.8);
+	}
 }
 
-/* --- Adjust body slightly if needed --- */
-/* Ensure body background doesn't overlay the fixed container */
+
 body {
-    /* ... (keep existing body styles) ... */
-    position: relative; /* Needed for z-index context if body had one */
-    z-index: 0; /* Ensure body content is above the z-index: -1 container */
+	position: relative;
+	z-index: 0;
 }
