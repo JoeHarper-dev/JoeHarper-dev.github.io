@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Harper // Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="mocha">
+
+    <div class="bubble-wrapper"></div>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">/> Joe.Harper</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">./about</a></li>
+                    <li><a href="#projects">./projects</a></li>
+                    <li><a href="#contact">./contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="name">Joe Harper</span>.</h1>
+                <p class="subtitle">Software dev and VFX artist</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <img src="https://github.com/JoeHarper-dev/JoeHarper-dev.github.io/blob/main/portfolio/media/avatar.jpg?raw=true" alt="A portrait of Your Name" class="about-image">
+                <div class="about-text">
+                    <h2><span style="color: var(--green)">//</span> About Me</h2>
+                    <p>
+                        Hi, Im Joe. Im a VFX graduate specializing in programming tools for the VFX apps, and general software development. I have a passion for creating efficient and innovative solutions to complex problems.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, training in gymnaastics, or enjoying some good music. I'm always eager to learn and collaborate on exciting new ideas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2><span style="color: var(--green)">//</span> My Projects</h2>
+                <div class="carousel">
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track">
+                            <li class="carousel-slide current-slide">
+                                <div class="project-card">
+                                    <img src="https://github.com/JoeHarper-dev/JoeHarper-dev.github.io/blob/main/Media/QlGYp%20(1).gif?raw=true" alt="Project One Screenshot">
+                                    <h3>Project One: CityBuilder</h3>
+                                    <p>A tool developed to procedurally generate city layouts within the VFX application Houdini.</p>
+                                    <div class="project-links">
+                                        <a href="https://vimeo.com/1083511970/2db81c0c89?share=copy" class="btn">Live Demo</a>
+                                        <a href="https://github.com/JoeHarper-dev/VFX-6102-citybuilder" class="btn">GitHub</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="carousel-slide">
+                                <div class="project-card">
+                                    <img src="https://github.com/JoeHarper-dev/JoeHarper-dev.github.io/blob/main/Media/cave.png?raw=true" alt="Project Two Screenshot">
+                                    <h3>Project Two: Cave Generation</h3>
+                                    <p>This project generates realistic cave systems using procedural generation techniques. Built with Houdini and Python.</p>
+                                    <div class="project-links">
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="carousel-slide">
+                                <div class="project-card">
+                                    <img src="https://github.com/JoeHarper-dev/JoeHarper-dev.github.io/blob/main/Media/scatter.png?raw=true" alt="Project Three Screenshot">
+                                    <h3>Project Three: Scatter tool</h3>
+                                    <p>A tool for scattering objects in a 3D environment, built with Houdini and Python.</p>
+                                    <div class="project-links">
+                                        <a href="#" class="btn">Live Demo</a>
+                                        <a href="https://github.com/JoeHarper-dev/VFX6100" class="btn">GitHub</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="carousel-button carousel-button--left">&lt;</button>
+                    <button class="carousel-button carousel-button--right">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2><span style="color: var(--green)">//</span> Get In Touch</h2>
+                <p>Have a question or want to work together? Feel free to reach out!</p>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="social-links">
+                <!-- Replace # with your actual social media links -->
+                <a href="https://github.com/JoeHarper-dev" title="GitHub">GH</a>
+                <a href="https://www.linkedin.com/in/joe-harper-17b84829b/" title="LinkedIn">LI</a>
+            </div>
+            <p class="copyright">&copy; 2025 Joe Harper. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
