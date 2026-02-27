@@ -234,27 +234,29 @@ h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--overlay);
-    color: var(--text);
+    background: var(--accent);
+    color: var(--bg);
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     cursor: pointer;
     z-index: 10;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .nav-btn:hover {
-    background: var(--accent);
-    color: var(--bg);
+    transform: translateY(-50%) scale(1.1);
+    filter: brightness(1.1);
 }
 
-.prev { left: -20px; }
-.next { right: -20px; }
+.prev { left: -25px; }
+.next { right: -25px; }
 
 .showreel-section {
     width: 100%;
