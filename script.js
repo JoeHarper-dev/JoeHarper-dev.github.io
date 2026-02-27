@@ -1,105 +1,115 @@
-document.addEventListener('DOMContentLoaded', function() {
+/**
+ * Joe Harper's Portfolio Scripts
+ * Handles Theme Switching, Bubbles, and Carousel Logic
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initBubbles();
+    initCarousel();
+});
+
+/* --- THEME SWITCHER --- */
+function initTheme() {
+    const themeSelect = document.getElementById('theme-select');
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'everforest';
     
-    // --- Easter Egg 1: Console Message ---
-    console.log(
-        "%cHey, curious developer! 👋 You've found an easter egg. Try the Konami code...",
-        "color: #cba6f7; font-family: 'JetBrains Mono', monospace; font-size: 1.2em; font-weight: bold;"
-    );
+    // Apply saved theme
+    document.body.setAttribute('data-theme', savedTheme);
+    themeSelect.value = savedTheme;
 
-    // --- Bubble Animation ---
-    const bubbleWrapper = document.querySelector('.bubble-wrapper');
-    const numBubbles = 25;
+    // Listen for changes
+    themeSelect.addEventListener('change', (e) => {
+        const newTheme = e.target.value;
+        document.body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('portfolio-theme', newTheme);
+    });
+}
 
-    for (let i = 0; i < numBubbles; i++) {
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
-        
-        const size = Math.random() * 60 + 10; // 10px to 70px
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        
-        bubble.style.left = `${Math.random() * 100}%`;
-        
-        const animationDuration = Math.random() * 10 + 15; // 15s to 25s
-        bubble.style.animationDuration = `${animationDuration}s`;
-        
-        const animationDelay = Math.random() * 15; // 0s to 15s
-        bubble.style.animationDelay = `${animationDelay}s`;
+/* --- BUBBLE GENERATOR --- */
+function initBubbles() {
+    const container = document.getElementById('bubble-container');
+    const bubbleCount = 15; // How many bubbles on screen
 
-        // For varied horizontal movement
-        bubble.style.setProperty('--x-end', `${(Math.random() * 200) - 100}px`);
-
-        bubbleWrapper.appendChild(bubble);
+    for (let i = 0; i < bubbleCount; i++) {
+        createBubble(container);
     }
+}
 
-    // --- Carousel Logic ---
+function createBubble(container) {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+    
+    // Randomize size
+    const size = Math.random() * 60 + 20; // 20px to 80px
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    
+    // Randomize position
+    bubble.style.left = `${Math.random() * 100}%`;
+    
+    // Randomize animation duration and delay
+    const duration = Math.random() * 10 + 10; // 10s to 20s
+    const delay = Math.random() * 10;
+    
+    bubble.style.animationDuration = `${duration}s`;
+    bubble.style.animationDelay = `-${delay}s`; // Negative delay starts animation mid-way
+    
+    container.appendChild(bubble);
+}
+
+/* --- CAROUSEL LOGIC --- */
+function initCarousel() {
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
-    const nextButton = document.querySelector('.carousel-button--right');
-    const prevButton = document.querySelector('.carousel-button--left');
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+    
+    const slideWidth = slides[0].getBoundingClientRect().width;
+
+    // Arrange slides next to each other
+    const setSlidePosition = (slide, index) => {
+        slide.style.left = slideWidth * index + 'px';
+    };
+    slides.forEach(setSlidePosition);
 
     const moveToSlide = (track, currentSlide, targetSlide) => {
-        if (!targetSlide) return;
-        const amountToMove = targetSlide.offsetLeft;
-        track.style.transform = 'translateX(-' + amountToMove + 'px)';
+        track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
         currentSlide.classList.remove('current-slide');
         targetSlide.classList.add('current-slide');
     }
 
+    const updateDots = (currentDot, targetDot) => {
+        currentDot.classList.remove('current-slide');
+        targetDot.classList.add('current-slide');
+    }
+
+    // Next Button
+    nextButton.addEventListener('click', e => {
+        const currentSlide = track.querySelector('.current-slide');
+        let nextSlide = currentSlide.nextElementSibling;
+        
+        // Loop back to start if at end
+        if (!nextSlide) nextSlide = slides[0];
+
+        moveToSlide(track, currentSlide, nextSlide);
+    });
+
+    // Prev Button
     prevButton.addEventListener('click', e => {
         const currentSlide = track.querySelector('.current-slide');
         let prevSlide = currentSlide.previousElementSibling;
 
-        if (!prevSlide) {
-            prevSlide = slides[slides.length - 1]; // Loop to the end
-        }
+        // Loop to end if at start
+        if (!prevSlide) prevSlide = slides[slides.length - 1];
+
         moveToSlide(track, currentSlide, prevSlide);
     });
-
-    nextButton.addEventListener('click', e => {
-        const currentSlide = track.querySelector('.current-slide');
-        let nextSlide = currentSlide.nextElementSibling;
-
-        if (!nextSlide) {
-            nextSlide = slides[0]; // Loop back to the start
-        }
-        moveToSlide(track, currentSlide, nextSlide);
+    
+    // Handle window resize to fix slide positions
+    window.addEventListener('resize', () => {
+        const newSlideWidth = slides[0].getBoundingClientRect().width;
+        slides.forEach((slide, index) => slide.style.left = newSlideWidth * index + 'px');
     });
-
-    // --- Easter Egg 2: Konami Code Theme Switch ---
-    const konamiCode = [
-        'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 
-        'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 
-        'b', 'a'
-    ];
-    let konamiIndex = 0;
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === konamiCode[konamiIndex]) {
-            konamiIndex++;
-            if (konamiIndex === konamiCode.length) {
-                konamiIndex = 0; // Reset for next time
-                toggleTheme();
-            }
-        } else {
-            konamiIndex = 0; // Wrong key, reset
-        }
-    });
-
-    const toggleTheme = () => {
-        const body = document.body;
-        const currentTheme = body.getAttribute('data-theme');
-        if (currentTheme === 'mocha') {
-            body.setAttribute('data-theme', 'latte');
-            console.log("%cLatte theme activated! ☀️", "color: #fe640b; font-family: 'JetBrains Mono', monospace; font-size: 1.2em;");
-        } else {
-            body.setAttribute('data-theme', 'mocha');
-            console.log("%cMocha theme re-activated! 🌙", "color: #cba6f7; font-family: 'JetBrains Mono', monospace; font-size: 1.2em;");
-        }
-    };
-
-    // --- Easter Egg 3: Click the logo to toggle theme ---
-    const logo = document.querySelector('.logo');
-    logo.addEventListener('click', toggleTheme);
-});
-
+}
